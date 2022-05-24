@@ -33,8 +33,8 @@ var finish = ee.Date('2019-09-10');             // Last date to include in the s
 var tsl_median_binsize = 2;                     // Percentile of altitude range to obtain TSL from
 var cf_threshold = 5;                           // Minimum cloudfree portion (%)of glacier surface to conduct TSL analysis
 
-var rgi_path = 'users/davidloibl/rgi60_Asia_combined'; // Path to RGI shapefile containing the glacier to investigate
-var core = require('users/davidloibl/tsl-retrieval:core');
+var rgi_path = 'users/___your_GEE_account___/rgi60_Asia_combined'; // Path to RGI shapefile containing the glacier to investigate
+var core = require('users/___your_GEE_account___/tsl-retrieval:core');
 
 var dem = 'JAXA/ALOS/AW3D30_V1_1';
 
