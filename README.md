@@ -3,6 +3,8 @@ Welcome to the home of MANTRA, the "MountAiN glacier Transient snowline Retrieva
 
 **At this point the repository contains only the Evaluate Tool to visualize indidivual results. The routine for parallel processing of comprehensive TSLA datasets will be added upon publication of the paper (which is currently in review).**
 
+<img src="https://github.com/cryotools/mantra/blob/main/supplement/mantra-evaluate-screenshot.png" alt="Screenshot of the MANTRA Evaluate Tool">
+
 Please note that results provided by the Evaluate Tool may be flawed, e.g. by cloud cover. 
 It is advised to check the results by comparing the classification with the Landsat image by toggling layers before.
 
