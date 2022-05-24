@@ -8,7 +8,7 @@ Welcome to the home of MANTRA, the "MountAiN glacier Transient snowline Retrieva
 Please note that results provided by the Evaluate Tool may be flawed, e.g. by cloud cover. 
 It is advised to check the results by comparing the classification with the Landsat image by toggling layers before.
 
-FEATURES
+**Features**
 - Classify surface materials based on Landsat band-ratios (snow, ice, debris/rock, clouds)
 - Create a catalogue of relevant Landsat scenes from multiple missions (Landsat 4 to 8)
 - Merge scenes taken at the same date that are covered by the glacier's outline
@@ -29,7 +29,7 @@ That's it, you should now be ready to ride the MANTRA.
 
 # Running the MANTRA Evaluate Tool
 1. In the "evaluate" script, edit the variables "rgi_id", "start" and "finish" to meet your study subject:
-    - For "rgi_id" enter, well the RGI ID of the glacier. In case you used the RGI shapefile provided with this repo, the initial values should work just fine.
+    - For "rgi_id" enter, well, the RGI ID of the glacier. In case you used the RGI shapefile provided with this repo, the initial values should work just fine.
     - "start" and "end" refer to period of time to investigate. Make sure to keep it short (max. ~six months) to avoid GEE stalling.
 2. Click "Save" and "Run".
 3. When GEE has finsihed loading, the dates for which adequate Landsat scenes are available can be selected (combo box on the top right of the map window). Details of the Landsat scenes can be investigated in the "Console" tab.
