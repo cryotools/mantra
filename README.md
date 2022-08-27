@@ -36,3 +36,9 @@ That's it, you should now be ready to ride the MANTRA.
 4. After selecting a date from the list, GEE will start the processing (may take a while).
 5. After processing has finished, the classification results will be shown in the map, statistics in the pane on the right-hand side.
 
+
+# Acknoledgements
+MANTRA was developed within the research project "TopoClimatic Forcing and non-linear dynamics in the climate change adaption of glaciers in High Asia" (TopoClif). TopoCliF and David Loibl's work within the project were funded by [DFG](https://gepris.dfg.de/gepris/projekt/356944332) under the ID LO 2285/1-1.
+
+The analysis of spectral charateristics, development of band-ratios and identification of adequate thresholds was supported by [Inge Grünberg](https://orcid.org/0000-0002-5748-8102). Inge's contribution to this project was supported by [Geo.X](https://www.geo-x.net/), the research network for Geosciences in Berlin and Potsdam.
+
