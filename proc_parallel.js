@@ -11,7 +11,7 @@ FEATURES
 - Process data for relevant Landsat scenes from multiple missions (Landsat 4 to 8)
 - Merge scenes taken at the same date that are covered by the glacier's outline
 - Mask pixels with insufficient illumination
-- Calculate multiple metrics and statistics
+- Calculate metrics and statistics
 - Write the results to a CSV in Google Drive
 - Do all this in parallel for (very) many glaciers and Landsat scenes.
 
@@ -52,7 +52,10 @@ var start    = ee.Date('2020-01-01');           // First date to include in the 
 var finish   = ee.Date('2021-12-31');           // Last date to include in the search for Landsat scenes
 
 // Path to RGI shapefile containing the glacier to investigate
-var glaciers = ee.FeatureCollection("users/_YOUR-USER_/_YOUR-RGI-SHAPEFILE_");
+var glaciers = ee.FeatureCollection("users/___your_GEE_account___/_YOUR-RGI-SHAPEFILE_");
+
+// Path to MATNRA core library
+var core = require('users/___your_GEE_account___/tsl-retrieval:core');
 
 /* USER CONFIGURATION END */
 
@@ -108,10 +111,6 @@ var landsatCollection = ee.ImageCollection(ls4.merge(ls5).merge(ls7).merge(ls8))
 var diff = finish.difference(start, 'day');
 var temporalResolution = 1;  // days
 var range = ee.List.sequence(0, diff.subtract(1), temporalResolution).map(function(day){return start.advance(day,'day')});
-
-
-/* IMPORT FUNCTIONS */
-var core = require('users/davidloibl/tsl-retrieval:core');
 
 
 /* LOCAL FUNCTIONS */
