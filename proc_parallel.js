@@ -75,7 +75,7 @@ var cf_threshold        = 20;                   // Minimum cloudfree portion [%]
 var alos_DEM = ee.Image("JAXA/ALOS/AW3D30_V1_1").select('AVE');
 
 var exclude_glaciers = ['RGI-15.03544'];
-var tool_version = '0.8.1'
+var tool_version = '0.8.2'
 
 glaciers = glaciers.filter(ee.Filter.inList("RGIId", glacier_list));
 

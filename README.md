@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/495761275.svg)](https://zenodo.org/badge/latestdoi/495761275)
+
 # MANTRA
 Welcome to the home of MANTRA, the "MountAiN glacier Transient snowline Retrieval Algorithm" -- a Google Earth Engine (GEE) toolset to process and evaluate glacier surface classifications and Transient Snowline Altitudes (TSLA) from Landsat and Digital elevation model data.
 
@@ -54,6 +56,9 @@ That's it, you should now be ready to ride the MANTRA.
 - Start with few glaciers and a short period of time and test your setup thoroughly before moving on to full-scale processing (may save you nerves and the environment a lot of wasted electricity).
 - When jobs fail, check the error message provided in the Tasks tab. Typical reasons are, that a package contained too many glaciers or that an individual scene/glaciers failed. Both cases can be treated by braking down the glacier list into mutliple smaller lists (use the speadsheet from second tip) and process these again. Iterate as necessary until all jobs succeed or the failing glacier/scene is identified.
 
+# Citing MANTRA
+If you publish work based on MANTRA, please cite as:
+David Loibl (2022): MountAiN glacier Transient snowline Retrieval Algorithm (MANTRA) v0.8.2, doi: 10.5281/zenodo.7133644
 
 # Acknoledgements
 MANTRA was developed within the research project "TopoClimatic Forcing and non-linear dynamics in the climate change adaption of glaciers in High Asia" (TopoClif). TopoCliF and David Loibl's work within the project were funded by [DFG](https://gepris.dfg.de/gepris/projekt/356944332) under the ID LO 2285/1-1.
