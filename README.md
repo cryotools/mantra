@@ -15,8 +15,8 @@ Please note that results may be flawed, e.g. by cloud cover. For analyses at ind
 - Merge scenes taken at the same date that are covered by the glacier's outline
 - Mask pixels with insufficient illumination
 - Calculate metrics and statistics
-- Visualize the classification (Evaluate Tool only)
-- Write the results to a CSV in Google Drive (parallel process)
+- Visualize the classification and save it to a geodcoded image file in Google Drive (Evaluate Tool only)
+- Write the results to a CSV file in Google Drive (parallel process)
 - Do all this in parallel for (very) many glaciers and Landsat scenes.
 
 
@@ -38,6 +38,12 @@ That's it, you should now be ready to ride the MANTRA.
 3. When GEE has finsihed loading, the dates for which adequate Landsat scenes are available can be selected (combo box on the top right of the map window). Details of the Landsat scenes can be investigated in the "Console" tab.
 4. After selecting a date from the list, GEE will start the processing (may take a while).
 5. After processing has finished, the classification results will be shown in the map, statistics in the pane on the right-hand side.
+6. Optionally, you may save the result as geocoded image file to Google Drive. To do so, head over to the "Tasks" tab and click "run" next to the prepared job. The resulting image will have five classes coded as: 
+    - (0) all non-classified pixels including those off-glacier, affected by Landsat scan-line errors or shadows, 
+    - (1) snow-covered pixels, 
+    - (2) pixels classified as ice, 
+    - (3) pixels classified as debris, and 
+    - (4) pixels that do not belong to any of the previous categories, particularly cloud cover. 
 
 # Running the MANTRA Parallel Processing Tool
 1. In the "parallel processing" script, edit the variables `package_number`, `rgi_id`, `start` and `finish` to meet your study subject:
@@ -59,10 +65,12 @@ That's it, you should now be ready to ride the MANTRA.
 # Citing MANTRA
 If you publish work based on MANTRA, please cite as:
 
-David Loibl (2022): MountAiN glacier Transient snowline Retrieval Algorithm (MANTRA) v0.8.2, doi: [10.5281/zenodo.7133644](https://doi.org/10.5281/zenodo.7133644)
+David Loibl (2022): MountAiN glacier Transient snowline Retrieval Algorithm (MANTRA) v0.8.3, doi: [10.5281/zenodo.7133644](https://doi.org/10.5281/zenodo.7133644)
 
 # Acknoledgements
 MANTRA was developed within the research project "TopoClimatic Forcing and non-linear dynamics in the climate change adaption of glaciers in High Asia" (TopoClif). TopoCliF and David Loibl's work within the project were funded by [DFG](https://gepris.dfg.de/gepris/projekt/356944332) under the ID LO 2285/1-1.
 
 The analysis of spectral charateristics, development of band-ratios and identification of adequate thresholds was supported by [Inge Grünberg](https://orcid.org/0000-0002-5748-8102). Inge's contribution to this project was supported by [Geo.X](https://www.geo-x.net/), the research network for Geosciences in Berlin and Potsdam.
+
+The feature to save geocoded images of classification results was added to the Evaluate Tool by [Niklas Richter](https://orcid.org/0000-0002-8833-0420).
 
