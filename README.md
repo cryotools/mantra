@@ -65,7 +65,7 @@ That's it, you should now be ready to ride the MANTRA.
 # Citing MANTRA
 If you publish work based on MANTRA, please cite as:
 
-David Loibl (2022): MountAiN glacier Transient snowline Retrieval Algorithm (MANTRA) v0.8.3, doi: [10.5281/zenodo.7133644](https://doi.org/10.5281/zenodo.7133644)
+David Loibl (2022): MountAiN glacier Transient snowline Retrieval Algorithm (MANTRA) v0.8.3, doi: [10.5281/zenodo.8044734](https://doi.org/10.5281/zenodo.8044734)
 
 # Acknoledgements
 MANTRA was developed within the research project "TopoClimatic Forcing and non-linear dynamics in the climate change adaption of glaciers in High Asia" (TopoClif). TopoCliF and David Loibl's work within the project were funded by [DFG](https://gepris.dfg.de/gepris/projekt/356944332) under the ID LO 2285/1-1.
