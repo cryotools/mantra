@@ -18,9 +18,10 @@ FEATURES
 ACKNOWLEDGEMENTS:
 Routine to merge multiple Landsat sensors into one collection intensively inspired by Matthias Baumann's (HU Berlin) scripts.
 Inge Grünberg (AWI Potsdam) developed the two ratios additional to the NDSI and helped finding adequate thresholds.
+The feature to save geocoded images of classification results was added to the Evaluate Tool by Niklas Richter.
 
 
-2022, David Loibl
+2023, David Loibl, Niklas Richter
 
 *****************************************************/
 
