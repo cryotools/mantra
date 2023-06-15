@@ -511,6 +511,33 @@ var imageSelect = ui.Select({
     Map.addLayer(cc_TSL_range, {color: '333333'}, 'CC TSL Range ' + value);
     Map.addLayer(masked_DEM, topoViz, 'Masked DEM ' + value);
     
+    // join different layers into one
+    var class_collection = ee.ImageCollection([SC_masked.select('SWIR1').remap([0, 1],[0, 1]).rename('Classification').toInt(),
+                                               IC_masked.select('SWIR1').remap([0, 1], [0, 2]).rename('Classification').toInt(),
+                                               DC_masked.select('SWIR1').remap([0, 1], [0, 3]).rename('Classification').toInt(),
+                                               CC_masked.select('covered').remap([0, 1], [0, 4]).rename('Classification').toInt()])
+    var mosaic = class_collection.mosaic()
+                                 .set('RGIId', rgi_id)
+                                 .set('GLACIER_AREA', glacier_area);
+    print(mosaic)
+    Map.addLayer(mosaic, {min: 1, max: 4, palette: ['FFFFFF', '084f85', '855208', '999999']})
+    
+    var ls_version = scene_id.getInfo().split('_')[0]
+    var projection = selected_scene.select('SWIR1').projection().getInfo();
+    print(projection)
+    
+    var filename = ee.String('MANTRA_SurfClass_').cat(ls_version).cat('_').cat(rgi_id.replace('.', '-')).cat('_').cat(scene_date);
+    print(filename)
+    
+    // Export the image, specifying the CRS, transform, and region.
+    Export.image.toDrive({
+      image: mosaic.clip(selected_glacier),
+      description: filename.getInfo(),
+      region: selected_glacier,
+      crs: projection.crs,
+      fileFormat: 'GeoTIFF',
+      scale: 30 //this needs to be changed according to the Landsat resolution which should be 30 for most cases
+    });
     
     /*  // Debugging: Uncomment to show all generated vector outlines
     Map.addLayer(total_class_cov_outline, {color: '123456'}, 'Coverage outline ' + value);
