@@ -53,17 +53,17 @@ var alos_DEM = ee.Image(dem);
 var alos_DEM = alos_DEM.select('AVE');
 
 //Build a joined Landsat 4-8 collection ()
-var bands         = ['B1', 'B2', 'B3', 'B4',  'B5',    'B7',    'B6',         'BQA'];
+var bands         = ['B1', 'B2', 'B3', 'B4',  'B5',    'B7',    'B6',         'QA_PIXEL'];
 var band_names    = ['B',  'G',  'R',  'NIR', 'SWIR1', 'SWIR2', 'T',          'BQA'];
-var l7bands       = ['B1', 'B2', 'B3', 'B4',  'B5',    'B7',    'B6_VCID_2',  'BQA'];
+var l7bands       = ['B1', 'B2', 'B3', 'B4',  'B5',    'B7',    'B6_VCID_2',  'QA_PIXEL'];
 var l7band_names  = ['B',  'G',  'R',  'NIR', 'SWIR1', 'SWIR2', 'T',          'BQA'];
-var l8bands       = ['B2', 'B3', 'B4', 'B5',  'B6',    'B7',    'B10',        'BQA'];
+var l8bands       = ['B2', 'B3', 'B4', 'B5',  'B6',    'B7',    'B10',        'QA_PIXEL'];
 var l8band_names  = ['B',  'G',  'R',  'NIR', 'SWIR1', 'SWIR2', 'T',          'BQA'];
 
-var ls4 = ee.ImageCollection('LANDSAT/LT04/C01/T1_TOA').map(function(image){return image.select(bands).rename(band_names)});
-var ls5 = ee.ImageCollection('LANDSAT/LT05/C01/T1_TOA').map(function(image){return image.select(bands).rename(band_names)});
-var ls7 = ee.ImageCollection('LANDSAT/LE07/C01/T1_TOA').map(function(image){return image.select(l7bands).rename(l7band_names)}).filterMetadata('GAIN_BAND_5', 'equals', 'L');  // Remove scenes where TOA was processed with high gain
-var ls8 = ee.ImageCollection('LANDSAT/LC08/C01/T1_TOA').map(function(image){return image.select(l8bands).rename(l8band_names)});
+var ls4 = ee.ImageCollection('LANDSAT/LT04/C02/T1_TOA').map(function(image){return image.select(bands).rename(band_names)});
+var ls5 = ee.ImageCollection('LANDSAT/LT05/C02/T1_TOA').map(function(image){return image.select(bands).rename(band_names)});
+var ls7 = ee.ImageCollection('LANDSAT/LE07/C02/T1_TOA').map(function(image){return image.select(l7bands).rename(l7band_names)}).filterMetadata('GAIN_BAND_5', 'equals', 'L')  // Remove scenes where TOA was processed with high gain;
+var ls8 = ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA').map(function(image){return image.select(l8bands).rename(l8band_names)});
 
 var landsatCollection = ee.ImageCollection(ls4.merge(ls5).merge(ls7).merge(ls8))
                   
